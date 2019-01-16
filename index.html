@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <video
+      src="./thevideo.mp4"
+      controls="true"
+      autoplay
+      muted
+      style="width: 500px;"
+    ></video>
+
+    <script type="text/javascript">
+      window.addEventListener('orientationchange', () => {
+        if (/landscape/.test(window.screen.orientation.type)) {
+          document.querySelector('video').requestFullscreen();
+        } else {
+          window.document.exitFullscreen();
+        }
+      });
+    </script>
+  </body>
+</html>
